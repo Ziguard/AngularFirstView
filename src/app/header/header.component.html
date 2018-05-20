@@ -1,6 +1,17 @@
-<nav>
-  <ul>
-    <a routerLink="/planning">Planification</a>
-    <a routerLink="/roles">Roles</a>
-  </ul>
-</nav>
+<header>
+  <mat-toolbar color="primary">
+    <!--<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/planning" >Planification</button>
+    <button mat-menu-item routerLink="/roles" >Gestion Utilisateurs</button>
+    </mat-menu>-->
+    <nav>
+      <button mat-button routerLink="">Home</button>
+      <button mat-button routerLink="/planning">Planification</button>
+      <button mat-button routerLink="/roles">Roles</button>
+    </nav>
+  </mat-toolbar>
+</header>
+
+
+

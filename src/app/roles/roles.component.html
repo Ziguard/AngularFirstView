@@ -1,5 +1,5 @@
-<div>
-  <label>Trigramme: </label>
+<div class="userContainer">
+  <label>Trigramme</label>
   <label>{{trigram}}</label>
 
   <label>Roles: </label>
@@ -7,21 +7,49 @@
 </div>
 
 <div>
-  <table>
-    <tr>
-      <th> Trigramme :  </th>
-      <td>GEF</td>
-      <td>MPG</td>
-      <td>HLG</td>
-    </tr>
-    <tr>
-      <th> Roles : </th>
-      <td>Administrateur</td>
-      <td>Planification</td>
-      <td>Planification</td>
+  <table mat-table #table [dataSource]="dataSource">
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="roles">
+      <th mat-header-cell *matHeaderCellDef> Roles </th>
+      <td mat-cell *matCellDef="let element"> {{element.roles}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        (click)="selection.toggle(row)">
+
+
     </tr>
   </table>
 </div>
 
-
-<button routerLink="./test"> test t'chicos</button>
+<button mat-button routerLink="./test"> test t'chicos</button>

@@ -13,10 +13,6 @@ const routes: Routes = [
       {
         path: 'planning',
         loadChildren: '../app/planning/planning.module#PlanningModule'
-        /*children: [
-          { path: 'management', component:ManagementComponent},
-          { path: 'transfer' , component:TransferComponent},
-        ]*/
       },
       {
         path        : 'roles',

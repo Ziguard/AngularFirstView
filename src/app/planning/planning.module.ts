@@ -1,12 +1,11 @@
-import { NgModule }            from '@angular/core';
-import { FormsModule }         from '@angular/forms';
-import { CommonModule }        from '@angular/common';
-import { CadencesComponent }   from './cadences/cadences.component';
-import { ManagementComponent } from './management/management.component';
-import { PlanningComponent }   from './planning.component';
+import { NgModule }                                                          from '@angular/core';
+import { FormsModule }                                                       from '@angular/forms';
+import { CommonModule }                                                      from '@angular/common';
+import { MatButtonModule, MatCardModule, MatDialogModule, MatToolbarModule } from '@angular/material';
 
+
+import { PlanningComponent } from './planning.component';
 import { PlanningRoutes }    from './planning.routing';
-import { TransferComponent } from './transfer/transfer.component';
 
 @NgModule({
   imports: [
@@ -14,12 +13,15 @@ import { TransferComponent } from './transfer/transfer.component';
     FormsModule,
     // Routing
     PlanningRoutes,
+    //MatDesign,
+    MatCardModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
   declarations: [
                  // sub component
                  PlanningComponent,
-                 CadencesComponent,
-                 ManagementComponent,
-                 TransferComponent]
+                 ]
 })
 export class PlanningModule { }

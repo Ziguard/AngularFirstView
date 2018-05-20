@@ -1,10 +1,12 @@
-<p>
-  planning works!
-</p>
-<ul>
-  <li><a [routerLink]="[{ outlets: { child: ['./transfer'] } }]"  > Transfert</a></li>
-  <!--<li><a routerLink="./planning">Transfert</a></li>-->
-  <li><a routerLink="./planning/management">Management File</a></li>
-</ul>
+<mat-toolbar color="secondary">
+  <nav>
+    <button mat-button >Planification </button>
+    <button mat-button >Cadence théorique</button>
+    <button mat-button >Charge Production Matéiraux</button>
+    <!--<button mat-button [routerLink]="[{ outlets: { child: ['./planning/transfer'] } }]" >Transfert</button>-->
+    <button mat-button routerLink="./transfer">Transfer: </button>
+    <button mat-button routerLink="./management" >Groupe File</button>
+  </nav>
+</mat-toolbar>
 
-<router-outlet name="child"></router-outlet>
+<router-outlet></router-outlet>
