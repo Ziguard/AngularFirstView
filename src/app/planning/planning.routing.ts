@@ -5,17 +5,15 @@ import { PlanningComponent }    from './planning.component';
 const planningRoutes: Routes = [
   {
     path     : '',
-    component : PlanningComponent,
-    children:[
-      {
-        path  :'transfer',
-        loadChildren:'../app/planning/transfer.module#TransferModule',
-      },
-      {
-        path: 'management',
-        loadChildren:'../app/planning/management.module#ManagementModule',
-      }
-    ]
+    component : PlanningComponent
+  },
+  {
+    path  :'transfer',
+    loadChildren:'../app/planning/transfer.module#TransferModule'
+  },
+  {
+    path        : 'management',
+    loadChildren: '../app/planning/management.module#ManagementModule'
   },
   {
     path:'**',

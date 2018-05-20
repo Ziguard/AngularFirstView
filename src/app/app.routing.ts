@@ -3,21 +3,17 @@ import { CommonModule }                            from '@angular/common';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: ''    ,
+   {
+    path:'',
     loadChildren: '../app/home/home.module#HomeModule'
+   },
+  {
+    path: 'planning',
+    loadChildren: '../app/planning/planning.module#PlanningModule'
   },
   {
-    path:'',
-    children: [
-      {
-        path: 'planning',
-        loadChildren: '../app/planning/planning.module#PlanningModule'
-      },
-      {
-        path        : 'roles',
-        loadChildren: '../app/roles/roles.module#RolesModule'
-      }]
+    path        : 'roles',
+    loadChildren: '../app/roles/roles.module#RolesModule'
   },
   {
     path:'**',
