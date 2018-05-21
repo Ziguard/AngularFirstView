@@ -1,5 +1,4 @@
-import { ModuleWithProviders, NgModule }           from '@angular/core';
-import { CommonModule }                            from '@angular/common';
+import { ModuleWithProviders }           from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -20,18 +19,6 @@ const routes: Routes = [
     redirectTo:''
   }
 ];
-
-@NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-    RouterModule
-  ],
-  declarations: []
-})
-export class AppRoutingModule { }
 
 export const AppRoute: ModuleWithProviders = RouterModule.forRoot(routes, {
   preloadingStrategy: PreloadAllModules

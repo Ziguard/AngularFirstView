@@ -9,11 +9,13 @@ const planningRoutes: Routes = [
   },
   {
     path  :'transfer',
-    loadChildren:'../app/planning/transfer.module#TransferModule'
+    loadChildren: '../app/planning/transfer/transfer.module#TransferModule',
+/*    outlet: 'test'*/
   },
   {
     path        : 'management',
-    loadChildren: '../app/planning/management.module#ManagementModule'
+    loadChildren: '../app/planning/management/management.module#ManagementModule',
+    /*outlet: 'test'*/
   },
   {
     path:'**',

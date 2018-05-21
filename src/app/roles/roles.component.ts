@@ -1,6 +1,7 @@
 import { Component, OnInit }  from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
-import {SelectionModel} from '@angular/cdk/collections';
+import {SelectionModel}       from '@angular/cdk/collections';
+import { element }            from 'protractor';
 
 @Component({
   selector: 'app-roles',
@@ -10,7 +11,7 @@ import {SelectionModel} from '@angular/cdk/collections';
 export class RolesComponent implements OnInit {
   displayedColumns = ['select', 'position', 'name','roles'];
   dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
-  selection = new SelectionModel<Element>(true, []);
+  selection = new SelectionModel<Element>(false, []);
 
   trigram:string;
   roles:string;
